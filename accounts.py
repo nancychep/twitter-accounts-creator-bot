@@ -28,7 +28,7 @@ def main(argv):
     # ... Existing code ...
 
     while not inputFile:
-        inputFile = input('Input file path: C:\Users\User\OneDrive\Documents\twitter.json')
+        inputFile = input('Input file path: C:\\Users\\User\\OneDrive\\Documents\\twitter.json')
 
     # Read the email and usernames from the input file
     try:
