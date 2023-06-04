@@ -6,12 +6,20 @@ from selenium import webdriver
 from SeleniumHelper import SeleniumHelper
 
 class TwitterCreator(SeleniumHelper):
+    DESKTOP_URL_CREATE = "https://twitter.com/signup"  # Replace with the actual URL
+    DESKTOP_FIELD_SIGN_UP_EMAIL = "#email"  # Replace with the actual selector
+    DESKTOP_FIELD_SIGN_UP_PASSWORD = "#password"  # Replace with the actual selector
+    DESKTOP_PAGE_CONTAINER = "#page-container"  # Replace with the actual selector
+    DESKTOP_URL_SKIP = "https://twitter.com/account/add_username"  # Replace with the actual URL
+    DESKTOP_FIELD_SIGN_UP_USERNAME = "#username"  # Replace with the actual selector
+    DESKTOP_URL_MAIN = "https://twitter.com"  # Replace with the actual URL
+
     # ... Existing code ...
 
     def desktopCreateMultipleUsers(self, email, usernames):
         self.loadPage(self.DESKTOP_URL_CREATE)
         self.waitAndWrite(self.DESKTOP_FIELD_SIGN_UP_EMAIL, email)
-        self.submitForm(self.selectAndWrite(self.DESKTOP_FIELD_SIGN_UP_PASSWORD, row['wachabangi']))
+        self.submitForm(self.selectAndWrite(self.DESKTOP_FIELD_SIGN_UP_PASSWORD, row['password']))
         
         for username in usernames:
             self.waitShowElement(self.DESKTOP_PAGE_CONTAINER)
