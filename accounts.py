@@ -28,9 +28,9 @@ def main(argv):
     
     inputFile = None  # Initialize inputFile variable
     
-    while not inputFile:
-        inputFile = input('Input file path: C:\\Users\\User\\OneDrive\\Documents\\twitter.json')
-        
+    while not inputFile or inputFile.strip() == "":
+        inputFile = input('Input file path: ')
+
     # Rest of the code remains the same
 
     try:
