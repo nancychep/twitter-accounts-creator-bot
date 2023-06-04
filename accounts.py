@@ -6,7 +6,6 @@ from selenium import webdriver
 from SeleniumHelper import SeleniumHelper
 
 class TwitterCreator(SeleniumHelper):
-
     # ... Existing code ...
 
     def desktopCreateMultipleUsers(self, email, usernames):
@@ -26,11 +25,14 @@ class TwitterCreator(SeleniumHelper):
 
 def main(argv):
     # ... Existing code ...
-
+    
+    inputFile = None  # Initialize inputFile variable
+    
     while not inputFile:
         inputFile = input('Input file path: C:\\Users\\User\\OneDrive\\Documents\\twitter.json')
+        
+    # Rest of the code remains the same
 
-    # Read the email and usernames from the input file
     try:
         data = simplejson.loads(open(inputFile).read())
         email = data['email']
